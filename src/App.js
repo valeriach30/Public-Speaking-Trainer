@@ -6,7 +6,7 @@ function App() {
     <div className="landing-page">
       <header>
         <div className="container">
-          <a href="#" className="logo">Speech <b>Crafters</b></a>
+          <a href="" className="logo">Speech <b>Crafters</b></a>
           <ul className="links">
             <li>Home</li>
             <li>Practice</li>
@@ -21,7 +21,7 @@ function App() {
             <button>Start Now!</button>
           </div>
           <div className="image">
-            <img src="https://img.freepik.com/premium-vector/speech-man-podium-illustration_111797-93.jpg" alt="Description of the image" />
+            <img src="https://img.freepik.com/premium-vector/speech-man-podium-illustration_111797-93.jpg" />
           </div>
         </div>
       </div>
