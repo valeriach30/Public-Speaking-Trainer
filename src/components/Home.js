@@ -11,7 +11,7 @@ function Home() {
                     <div className="info">
                         <h1>Public Speaking Trainer</h1>
                         <p>Our program empowers you to speak with confidence, captivate any audience, and leave a lasting impression. Whether you're new to public speaking or looking to refine your skills</p>
-                        <button> <Link to="/main">Start Now!</Link></button>
+                        <button> <Link to="/main" style={{ color: 'white' }}>Start Now!</Link></button>
                     </div>
                     <div className="image">
                         <img src="https://img.freepik.com/premium-vector/speech-man-podium-illustration_111797-93.jpg" alt='Speechman' />
