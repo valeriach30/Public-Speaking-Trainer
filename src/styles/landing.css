@@ -234,3 +234,15 @@ ul {
     background-color: #fff;
     /* Default background color */
 }
+
+.title {
+    color: #5d5d5d;
+    font-size: 44px;
+    padding-left: 5rem;
+}
+
+h2 {
+    color: #5d5d5d;
+    padding-left: 6rem;
+    font-size: 36px;
+}

@@ -1,0 +1,37 @@
+.VideoInput button {
+    border: 0;
+    border-radius: 20px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #6c63ff;
+    margin-bottom: 1rem;
+}
+
+.VideoInput button:hover {
+    border: 0;
+    border-radius: 20px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #433aec;
+}
+
+.VideoInput_input {
+    display: none;
+}
+
+.VideoInput_video {
+    display: block;
+    margin: 0;
+    width: 90%;
+    padding-left: 5rem;
+}
+
+.VideoInput_footer {
+    width: 80%;
+    min-height: 40px;
+    line-height: 40px;
+}
