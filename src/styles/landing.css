@@ -169,7 +169,68 @@ ul {
     background-color: #6c63ff;
 }
 
+@media (max-width: 767px) {
+    .landing-page .content .info {
+        text-align: center;
+        margin-bottom: 15px
+    }
+}
+
+.titleF {
+    font-size: 44px;
+    color: white;
+    text-align: center;
+    background-color: #575a89;
+    padding: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 20px;
+    border-radius: 30px;
+
+}
+
+.landing-page .content .feature1 h1 {
+    color: #5d5d5d;
+    font-size: 44px;
+}
+
+.landing-page .content .feature1 p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #5d5d5d;
+}
+
+.landing-page .content .feature1 button {
+    border: 0;
+    border-radius: 20px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    color: #FFF;
+    background-color: #6c63ff;
+}
+
 .landing-page .content .image img {
     max-width: 100%;
     transform: scale(1.5);
+}
+
+.content {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    /* Align cards horizontally with space between */
+}
+
+.feature1 {
+    flex: 1;
+    /* Equal width for all cards */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow */
+    background-color: #fff;
+    /* Default background color */
 }
