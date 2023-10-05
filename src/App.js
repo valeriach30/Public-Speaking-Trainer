@@ -6,7 +6,7 @@ function App() {
     <div className="landing-page">
       <header>
         <div className="container">
-          <a href="" className="logo">Speech <b>Crafters</b></a>
+          <span className="logo">Speech <b>Crafters</b></span>
           <ul className="links">
             <li>Home</li>
             <li>Practice</li>
