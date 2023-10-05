@@ -21,7 +21,7 @@ function App() {
             <button>Start Now!</button>
           </div>
           <div className="image">
-            <img src="https://img.freepik.com/premium-vector/speech-man-podium-illustration_111797-93.jpg" />
+            <img src="https://img.freepik.com/premium-vector/speech-man-podium-illustration_111797-93.jpg" alt='Speechman' />
           </div>
         </div>
       </div>
