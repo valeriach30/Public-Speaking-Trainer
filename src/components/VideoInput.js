@@ -31,7 +31,7 @@ export default function VideoInput(props) {
             {source && (
                 <video
                     className="VideoInput_video"
-                    width="100%"
+                    width={width}
                     height={height}
                     controls
                     src={source}
