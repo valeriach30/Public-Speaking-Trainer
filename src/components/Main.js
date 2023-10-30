@@ -30,14 +30,14 @@ function Main() {
 
         try {
             console.log("Sending request to API...");
-            const response = await fetch(url, options);
+            //const response = await fetch(url, options);
             console.log("Response received!");
-            const result = await response.text();
-            console.log(result);
+            //const result = await response.text();
+            //console.log(result);
         } catch (error) {
             console.error(error);
         } finally {
-            setLoading(false);
+            //setLoading(false);
         }
     }
 
@@ -56,7 +56,7 @@ function Main() {
             <p>Please upload the audio of your presentation to start the speech analysis</p>
             <AudioInput width={800} height={800} onFileChange={setAudioFile} />
             <button className="buttonSpeech" onClick={handleSpeechAnalysis}>Start Analysis</button>
-            {loading && <div className="spinner"></div>}
+            {loading && <><p>Analyzing audio!</p><div className="spinner"></div></>}
             <h3>Face Analysis</h3>
         </div>
     );
