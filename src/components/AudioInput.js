@@ -10,9 +10,11 @@ export default function Audio(props) {
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
+        props.onFileChange(file); // Aquí se usa la función pasada como prop
         const url = URL.createObjectURL(file);
         setSource(url);
     };
+
 
     const handleChoose = (event) => {
         inputRef.current.click();
