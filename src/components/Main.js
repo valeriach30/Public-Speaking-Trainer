@@ -7,17 +7,18 @@ import AudioInput from "./AudioInput";
 function Main() {
 
     const [audioFile, setAudioFile] = React.useState(null);
-
+    const [loading, setLoading] = React.useState(false);
 
     const handleSpeechAnalysis = async () => {
         if (!audioFile) {
             console.error("No audio file selected");
             return;
         }
-
+        setLoading(true);
         const url = 'https://whisper-speech-to-text1.p.rapidapi.com/speech-to-text';
         const data = new FormData();
-        data.append('file', audioFile); // use file uploaded from AudioInput
+        data.append('file', audioFile);
+
         const options = {
             method: 'POST',
             headers: {
@@ -28,15 +29,19 @@ function Main() {
         };
 
         try {
-            console.log("Sending request...");
+            console.log("Sending request to API...");
             const response = await fetch(url, options);
-            console.log("Request sent!");
+            console.log("Response received!");
             const result = await response.text();
             console.log(result);
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     }
+
+
 
     return (
         <div className="landing-page">
@@ -51,6 +56,7 @@ function Main() {
             <p>Please upload the audio of your presentation to start the speech analysis</p>
             <AudioInput width={800} height={800} onFileChange={setAudioFile} />
             <button className="buttonSpeech" onClick={handleSpeechAnalysis}>Start Analysis</button>
+            {loading && <div className="spinner"></div>}
             <h3>Face Analysis</h3>
         </div>
     );
