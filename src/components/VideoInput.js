@@ -25,6 +25,7 @@ export default function VideoInput(props) {
             />
             {videoId && (
                 <iframe
+                    title="YouTube Video Presentation"
                     className="VideoInput_video"
                     width={props.width}
                     height={props.height}
