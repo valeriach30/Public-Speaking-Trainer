@@ -2,10 +2,6 @@
     padding-left: 6rem;
 }
 
-.text {
-    padding-left: 0rem;
-}
-
 .VideoInput button {
     border: 0;
     border-radius: 20px;
@@ -27,13 +23,8 @@
     background-color: #433aec;
 }
 
-.videoInput_Text {
-    border: 1x solid black;
-    border-radius: 10px;
-    width: 20%;
-    padding: 10px;
-    margin: 15px;
-    margin-left: 0px;
+.VideoInput_input {
+    display: none;
 }
 
 .VideoInput_video {
