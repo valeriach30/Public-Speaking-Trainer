@@ -30,14 +30,14 @@ function Main() {
 
         try {
             console.log("Sending request to API...");
-            //const response = await fetch(url, options);
+            const response = await fetch(url, options);
             console.log("Response received!");
-            //const result = await response.text();
-            //console.log(result);
+            const result = await response.text();
+            console.log(result);
         } catch (error) {
             console.error(error);
         } finally {
-            //setLoading(false);
+            setLoading(false);
         }
     }
 
