@@ -29,7 +29,7 @@ export default function Audio(props) {
                 onChange={handleFileChange}
                 accept=".mov,.mp4,.avi,.mp3,.wav"
             />
-            {!source && <button onClick={handleChoose}>Choose</button>}
+            {!source && <button className='chooseBtn' onClick={handleChoose}>Choose</button>}
             {source && (
                 <video
                     className="VideoInput_video"
