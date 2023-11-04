@@ -3,7 +3,6 @@ import '../styles/landing.css';
 
 /* ------------------------ COMPONENTS ------------------------*/
 import Header from './Header';
-import VideoInput from "./VideoInput";
 import AudioInput from "./AudioInput";
 
 function Main() {
@@ -161,10 +160,6 @@ function Main() {
             < div className="content" >
                 <h1 className='title'>Welcome to Public Speaking Trainer AI</h1>
             </div >
-
-            {/* ------------------------ VIDEO INPUT ------------------------*/}
-            < h2 >&#127916; Upload your video to start!</h2 >
-            <VideoInput width={800} height={800} />
 
             {/* ------------------------ SPEECH ANALYSIS ------------------------*/}
             <h2>&#9197; Start analysis!</h2>
