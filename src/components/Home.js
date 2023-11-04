@@ -21,24 +21,24 @@ function Home() {
             <h1 className='titleF'>What we offer</h1>
             <div className='content'>
                 <div className="feature1">
-                    <h1>Upload your video</h1>
+                    <h1>Upload your audio</h1>
                     <p>Elevate your public speaking journey with our cutting-edge feature. It's your turn to shine! Record your practice speeches, presentations, or pitches, and upload them directly to our platform. Our state-of-the-art technology will analyze your performance, providing you with invaluable feedback and insights.</p>
                     <br></br>
-                    <p>🎥 Seamless Upload: Effortlessly upload your recorded videos, saving you time and hassle.</p>
+                    <p>🎥 Seamless Upload: Effortlessly upload your recorded audios, saving you time and hassle.</p>
                     <br></br>
-                    <p>📈 Data-Driven Insights: Receive personalized feedback on your pacing, tone, body language, and more, empowering you to refine your speaking skills.</p>
+                    <p>📈 Data-Driven Insights: Receive personalized feedback on your speaking skills.</p>
                 </div>
                 <div className="feature1">
-                    <h1>Analysis of facial expressions</h1>
-                    <p>Experience a revolutionary enhancement to your public speaking journey with our Facial Expression Analysis feature. Your face tells a story, and we're here to help you perfect it. </p>
+                    <h1>Tips for Your Presentation</h1>
+                    <p>Take your public speaking to the next level with our personalized Presentation Tips feature. Your delivery is key, and we're here to help you refine it. </p>
                     <br></br>
-                    <p>🔍 Feedback: Receive instant feedback on your facial expressions, allowing you to adapt and enhance your delivery on the fly.</p>
+                    <p>🔍 Tailored Feedback: Get specific suggestions on how to improve your presentation skills, allowing you to adjust and polish your performance.</p>
                     <br></br>
-                    <p>😀 Emotion Mastery: Learn to convey emotions effectively, ensuring your audience connects deeply with your message.</p>
+                    <p>🗣️ Effective Communication: Master the art of conveying your message, ensuring your audience is engaged and informed.</p>
                     <br></br>
-                    <p>🔒 Confidence Boost: Gain confidence in your ability to communicate authentically, knowing your facial expressions are perfectly aligned with your words.</p>
+                    <p>🔒 Confidence Building: Strengthen your public speaking confidence by knowing you're delivering your content in the most impactful way.</p>
                     <br></br>
-                    <p>🚀 Elevate Your Impact: Unleash the full power of non-verbal communication and become an unforgettable speaker.</p>
+                    <p>🚀 Enhance Your Influence: Harness the power of effective speaking techniques to leave a lasting impression on your audience.</p>
                 </div>
                 <div className="feature1">
                     <h1>Audio analysis</h1>
@@ -51,7 +51,7 @@ function Home() {
                     <p>🚀 Elevate Your Impact: Unleash the true potential of your voice and make a lasting impression on any audience.</p>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
