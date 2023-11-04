@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/landing.css';
 
 /* ------------------------ COMPONENTS ------------------------*/
@@ -11,9 +11,10 @@ function Main() {
     const [audioFile, setAudioFile] = React.useState(null);
     const [loading, setLoading] = React.useState(false);
     const [loadingSentiment, setLoadingSentiment] = React.useState(false);
+    const [loadingTips, setLoadingTips] = React.useState(false);
     const [text, setText] = useState(null);
     const [sentimentResults, setSentimentResults] = useState([]);
-
+    const [tips, setTips] = useState(null);
 
     /* ------------------------ FIRST AI >> GET TEXT FROM AUDIO ------------------------*/
     const handleSpeechAnalysis = async () => {
@@ -54,11 +55,10 @@ function Main() {
 
     /* ------------------------ SECOND AI >> GET SENTIMENT FROM TEXT ------------------------*/
     const handleSentimentAnalysis = async () => {
-        /*if (text == null) {
+        if (text == null) {
             console.error("No text to analyze");
             return;
-        }*/
-        setText('El d\u00eda de hoy vamos a hablar de c\u00f3mo mantener y registrar un algoritmo de software en coste rica. Entonces cuatro de los principales requisitos son los siguientes. En primer lugar, debe ser no de dos subvertas. El algoritmo no debe haber sido divulgado pulimcamente antes de que la persona lo registe. El segundo requisito es que debe tener un nivel inventivo. Es decir, debe ser una invenci\u00f3n y no obvia ni evidente.');
+        }
         setLoadingSentiment(true);
         const encodedText = encodeURIComponent(text);
         const url = 'https://emoai-ai-powered-text-emotion-analyzer.p.rapidapi.com/emotion?text=' + encodedText;
@@ -105,18 +105,65 @@ function Main() {
         ));
     };
 
+    /* ------------------------ THIRD AI >> GET TIPS ------------------------*/
+    const handleTips = async () => {
+        if (!text) {
+            console.error("No text to analyze");
+            return;
+        }
+        setLoadingTips(true);
+        const url = 'https://chatgpt53.p.rapidapi.com/';
+        const options = {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'X-RapidAPI-Key': '01989c5a92msh98e3df586790dacp1965d4jsn27d1908809f8',
+                'X-RapidAPI-Host': 'chatgpt53.p.rapidapi.com'
+            },
+            // Stringify the body to ensure it's sent as JSON
+            body: JSON.stringify({
+                messages: [
+                    {
+                        role: 'user',
+                        content: 'Give me tips on how to improve my speech! Here is my speech: ' + text
+                    }
+                ],
+                temperature: 1
+            })
+        };
+
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const jsonResponse = await response.json();
+
+            // Access the content from the choices array
+            const tips = jsonResponse.choices[0].message.content;
+            setTips(tips);
+            console.log(tips);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoadingTips(false);
+        }
+
+    }
+
+
     return (
-        <div className="landing-page">
+        < div className="landing-page" >
             {/* ------------------------ HEADER ------------------------*/}
-            <Header />
+            < Header />
 
             {/* ------------------------TITLE ------------------------*/}
-            <div className="content">
+            < div className="content" >
                 <h1 className='title'>Welcome to Public Speaking Trainer AI</h1>
-            </div>
+            </div >
 
             {/* ------------------------ VIDEO INPUT ------------------------*/}
-            <h2>&#127916; Upload your video to start!</h2>
+            < h2 >&#127916; Upload your video to start!</h2 >
             <VideoInput width={800} height={800} />
 
             {/* ------------------------ SPEECH ANALYSIS ------------------------*/}
@@ -129,7 +176,8 @@ function Main() {
             <button className="buttonSpeech" onClick={handleSpeechAnalysis}>Start Text Analysis</button>
             {loading && <><p className='textMain'>Analyzing audio!</p><div className="spinner"></div></>}
 
-            {text &&
+            {
+                text &&
                 <div>
                     <p className='textMain'> We gathered the following text from your audio: </p>
                     <p className='resultText'>{text}</p>
@@ -143,17 +191,29 @@ function Main() {
             <button className="buttonSpeech" onClick={handleSentimentAnalysis}>Start Text Sentiment Analysis</button>
 
             {/* ------------------------ TEXT SENTIMENT ANALYSIS RESULTS ------------------------*/}
-            {loadingSentiment
-                ? <><p className='textMain'>Analyzing text!</p><div className="spinner"></div></>
-                : <div className="sentiment-analysis-results">
-                    <h3>&#128214; Analysis Results</h3>
-                    {renderSentimentResults()}
-                </div>
+            {
+                loadingSentiment
+                    ? <><p className='textMain'>Analyzing text!</p><div className="spinner"></div></>
+                    : <div className="sentiment-analysis-results">
+                        <h3>&#128214; Analysis Results</h3>
+                        {renderSentimentResults()}
+                    </div>
             }
 
-            {/* ------------------------ EMOTION ANALYSIS ------------------------*/}
-            <h3>Face Analysis</h3>
-        </div>
+            {/* ------------------------ TIPS ------------------------*/}
+            <h3>💡 Get tips</h3>
+            <p className='textMain'>Press the button below to get some tips on how to improve!</p>
+            <button className="buttonSpeech" onClick={handleTips}>Get tips</button>
+            {loadingTips && <><p className='textMain'>Getting tips!</p><div className="spinner"></div></>}
+
+            {
+                tips &&
+                <div>
+                    <p className='textMain'> Here are your tips: </p>
+                    <p className='resultText'>{tips}</p>
+                </div>
+            }
+        </div >
     );
 }
 
